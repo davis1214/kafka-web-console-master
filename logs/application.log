@@ -1,0 +1,132 @@
+2015-09-11 16:42:03,576 - [INFO] - from play in pool-6-thread-3 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2015-09-11 16:42:08,600 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/play
+
+2015-09-11 16:42:09,415 - [INFO] - from play in play-internal-execution-context-1 
+Starting application default Akka system.
+
+2015-09-11 16:42:09,449 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-09-11 16:42:11,248 - [INFO] - from application in application-akka.actor.default-dispatcher-5 
+fetchAlarmMonitorInfoPoints in AlarmMonitorManager
+
+2015-09-11 16:42:17,210 - [INFO] - from application in application-akka.actor.default-dispatcher-5 
+alarm broker 10.16.43.156 in configed-zk 10.16.34.187 MessagesIn not ocurred
+
+2015-09-11 16:42:17,254 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send alarm [broker 10.16.43.156 in configed-zk 10.16.34.187 MessagesIn] true
+
+2015-09-11 16:42:17,259 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send msg broker 10.16.43.156 in configed-zk 10.16.34.187 MessagesIn is 191506309715 higher than configed 182173598102 to weixin ,response 200
+
+2015-09-11 16:42:17,260 - [INFO] - from application in application-akka.actor.default-dispatcher-5 
+alarm broker 10.16.43.155 in configed-zk 10.16.34.187 MessagesIn not ocurred
+
+2015-09-11 16:42:17,260 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send alarm [broker 10.16.43.155 in configed-zk 10.16.34.187 MessagesIn] true
+
+2015-09-11 16:42:17,260 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send msg broker 10.16.43.155 in configed-zk 10.16.34.187 MessagesIn is 183585019646 higher than configed 182173598102 to weixin ,response 200
+
+2015-09-11 16:42:17,261 - [INFO] - from application in application-akka.actor.default-dispatcher-5 
+alarm broker 10.16.10.199 in configed-zk 10.16.34.187 MessagesIn not ocurred
+
+2015-09-11 16:42:17,261 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send alarm [broker 10.16.10.199 in configed-zk 10.16.34.187 MessagesIn] true
+
+2015-09-11 16:42:17,261 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send msg broker 10.16.10.199 in configed-zk 10.16.34.187 MessagesIn is 183074486331 higher than configed 182173598102 to weixin ,response 200
+
+2015-09-11 16:42:17,303 - [INFO] - from application in application-akka.actor.default-dispatcher-5 
+alarm topic tvadfront-pc in configed-zk 10.16.34.187 BytesInPerSec not ocurred
+
+2015-09-11 16:42:17,304 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send alarm [topic tvadfront-pc in configed-zk 10.16.34.187 BytesInPerSec] true
+
+2015-09-11 16:42:17,304 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send msg topic tvadfront-pc in configed-zk 10.16.34.187 BytesInPerSec is 2.170324142774E12 higher than configed 2342342342 to weixin ,response 200
+
+2015-09-11 16:42:17,325 - [INFO] - from application in application-akka.actor.default-dispatcher-5 
+alarm topic newtvadpv in configed-zk 10.16.34.187 MessagesInPerSec not ocurred
+
+2015-09-11 16:42:17,326 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send alarm [topic newtvadpv in configed-zk 10.16.34.187 MessagesInPerSec] true
+
+2015-09-11 16:42:17,326 - [DEBUG] - from application in application-akka.actor.default-dispatcher-5 
+send msg topic newtvadpv in configed-zk 10.16.34.187 MessagesInPerSec is 5.679787356E9 higher than configed 2342342342 to weixin ,response 200
+
+2015-09-11 16:42:17,371 - [WARN] - from application in application-akka.actor.default-dispatcher-5 
+AlarmMonitorManager: undesired messages received!
+
+2015-09-11 16:42:17,377 - [WARN] - from application in application-akka.actor.default-dispatcher-3 
+AlarmMonitorManager: undesired messages received!
+
+2015-09-11 16:43:37,385 - [INFO] - from application in application-akka.actor.default-dispatcher-6 
+fetchAlarmMonitorInfoPoints in AlarmMonitorManager
+
+2015-09-11 16:43:37,479 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+send alarm [broker 10.16.43.156 in configed-zk 10.16.34.187 MessagesIn] false
+
+2015-09-11 16:43:37,481 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+resend msg broker 10.16.43.156 in configed-zk 10.16.34.187 MessagesIn is 191506309715 higher than configed 182173598102 to weixin
+
+2015-09-11 16:43:37,482 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+send alarm [broker 10.16.43.155 in configed-zk 10.16.34.187 MessagesIn] false
+
+2015-09-11 16:43:37,482 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+resend msg broker 10.16.43.155 in configed-zk 10.16.34.187 MessagesIn is 183585019646 higher than configed 182173598102 to weixin
+
+2015-09-11 16:43:37,483 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+send alarm [broker 10.16.10.199 in configed-zk 10.16.34.187 MessagesIn] false
+
+2015-09-11 16:43:37,483 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+resend msg broker 10.16.10.199 in configed-zk 10.16.34.187 MessagesIn is 183074486331 higher than configed 182173598102 to weixin
+
+2015-09-11 16:43:37,497 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+send alarm [topic tvadfront-pc in configed-zk 10.16.34.187 BytesInPerSec] false
+
+2015-09-11 16:43:37,497 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+resend msg topic tvadfront-pc in configed-zk 10.16.34.187 BytesInPerSec is 2.170324142774E12 higher than configed 2342342342 to weixin
+
+2015-09-11 16:43:37,512 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+send alarm [topic newtvadpv in configed-zk 10.16.34.187 MessagesInPerSec] false
+
+2015-09-11 16:43:37,512 - [DEBUG] - from application in application-akka.actor.default-dispatcher-6 
+resend msg topic newtvadpv in configed-zk 10.16.34.187 MessagesInPerSec is 5.679787356E9 higher than configed 2342342342 to weixin
+
+2015-09-11 16:44:57,555 - [INFO] - from application in application-akka.actor.default-dispatcher-7 
+fetchAlarmMonitorInfoPoints in AlarmMonitorManager
+
+2015-09-11 16:44:57,600 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send alarm [broker 10.16.43.156 in configed-zk 10.16.34.187 MessagesIn] true
+
+2015-09-11 16:44:57,600 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send msg broker 10.16.43.156 in configed-zk 10.16.34.187 MessagesIn is 191506309715 higher than configed 182173598102 to weixin ,response 200
+
+2015-09-11 16:44:57,600 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send alarm [broker 10.16.43.155 in configed-zk 10.16.34.187 MessagesIn] true
+
+2015-09-11 16:44:57,601 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send msg broker 10.16.43.155 in configed-zk 10.16.34.187 MessagesIn is 183585019646 higher than configed 182173598102 to weixin ,response 200
+
+2015-09-11 16:44:57,601 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send alarm [broker 10.16.10.199 in configed-zk 10.16.34.187 MessagesIn] true
+
+2015-09-11 16:44:57,601 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send msg broker 10.16.10.199 in configed-zk 10.16.34.187 MessagesIn is 183074486331 higher than configed 182173598102 to weixin ,response 200
+
+2015-09-11 16:44:57,608 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send alarm [topic tvadfront-pc in configed-zk 10.16.34.187 BytesInPerSec] true
+
+2015-09-11 16:44:57,608 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send msg topic tvadfront-pc in configed-zk 10.16.34.187 BytesInPerSec is 2.170324142774E12 higher than configed 2342342342 to weixin ,response 200
+
+2015-09-11 16:44:57,622 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send alarm [topic newtvadpv in configed-zk 10.16.34.187 MessagesInPerSec] true
+
+2015-09-11 16:44:57,622 - [DEBUG] - from application in application-akka.actor.default-dispatcher-7 
+send msg topic newtvadpv in configed-zk 10.16.34.187 MessagesInPerSec is 5.679787356E9 higher than configed 2342342342 to weixin ,response 200
+

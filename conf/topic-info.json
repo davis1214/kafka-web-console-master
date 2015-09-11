@@ -1,0 +1,61 @@
+{
+    "name": "configed topics in kafka2hdfs ",
+    "describe": "all topics configed in kafka2hdfs",
+    "topics": [
+        {
+            "topic": "tvadfront-ifox",
+            "partitions": 18,
+            "zkpath": "/kafka2hdfs_offset/tvadfront-ifox_offset"
+        },
+        {
+            "topic": "tvadfront-page",
+            "partitions": 18,
+            "zkpath": "/kafka2hdfs_offset/tvadfront-page_offset"
+        },
+        {
+            "topic": "tvadfront-mobile",
+            "partitions": 18,
+            "zkpath": "/kafka2hdfs_offset/tvadfront-mobile_offset"
+        },
+        {
+            "topic": "tvadfront-pc",
+            "partitions": 18,
+            "zkpath": "/kafka2hdfs_offset/tvadfront-pc_offset"
+        },
+        {
+            "topic": "tvadmcheck",
+            "partitions": 18,
+            "zkpath": "/kafka2hdfs_offset/tvadmcheck_1_offset"
+        },
+        {
+            "topic": "tvadmadfail",
+            "partitions": 1,
+            "zkpath": "/kafka2hdfs_1_offset/tvadmadfail_offset"
+        },
+        {
+            "topic": "tvadppv",
+            "partitions": 18,
+            "zkpath": "/kafka2hdfs_offset/tvadppv_offset"
+        },
+        {
+            "topic": "tvadpclick",
+            "partitions": 1,
+            "zkpath": "/kafka2hdfs_1_offset/tvadpclick_offset"
+        }  ,
+        {
+            "topic": "newtvadpv",
+            "partitions": 2,
+            "zkpath": "/kafka2hdfs_offset_yarn/newtvadpv_offset_yarn"
+        } ,
+        {
+            "topic": "minilog",
+            "partitions": 18,
+            "zkpath": "/kafka2hdfs_offset_yarn/minilog_offset_yarn"
+        }   ,
+        {
+            "topic": "dtqs",
+            "partitions": 5,
+            "zkpath": "/kafka2hdfs_offset_yarn/dtqs_offset_yarn"
+        }
+    ]
+}

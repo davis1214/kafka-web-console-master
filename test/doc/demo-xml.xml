@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="Mondrian">
+    <Cube name="Person">
+        <Table name="PERSON"/>
+        <Dimension name="部门" foreignKey="USERID">
+            <Hierarchy hasAll="true" primaryKey="USERID" allMemberName="所有部门">
+                <Table name="PERSON" alias="a"/>
+                <Level name="部门" column="DEPARTMENT" uniqueMembers="true"/>
+                <Level name="姓名" column="USERNAME" uniqueMembers="true"/>
+            </Hierarchy>
+        </Dimension>
+        <Dimension name="性别" foreignKey="USERID">
+            <Hierarchy hasAll="true" primaryKey="USERID" allMemberName="所有性别">
+                <Table name="PERSON" alias="b"/>
+                <Level name="性别" column="SEX" uniqueMembers="true"/>
+            </Hierarchy>
+        </Dimension>
+        <Dimension name="专业技术资格类别" foreignKey="USERID">
+            <Hierarchy hasAll="true" primaryKey="USERID" allMemberName="所有专业技术资格类别">
+                <Table name="PERSON" alias="c"/>
+                <Level name="资格类别" column="ZYJSLB" uniqueMembers="true"/>
+            </Hierarchy>
+        </Dimension>
+        <Dimension name="专业技术资格等级" foreignKey="USERID">
+            <Hierarchy hasAll="true" primaryKey="USERID" allMemberName="所有专业技术资格等级">
+                <Table name="PERSON" alias="d"/>
+                <Level name="资格等级" column="ZYJSDJ" uniqueMembers="true"/>
+            </Hierarchy>
+        </Dimension>
+        <Dimension name="职系" foreignKey="USERID">
+            <Hierarchy hasAll="true" primaryKey="USERID" allMemberName="所有职系">
+                <Table name="PERSON" alias="e"/>
+                <Level name="职系" column="ZHIXI" uniqueMembers="true"/>
+            </Hierarchy>
+        </Dimension>
+        <Dimension name="民族" foreignKey="USERID">
+            <Hierarchy hasAll="true" primaryKey="USERID" allMemberName="所有民族">
+                <Table name="PERSON" alias="f"/>
+                <Level name="民族" column="NATIONALITY" uniqueMembers="true"/>
+            </Hierarchy>
+        </Dimension>
+        <Dimension name="学历" foreignKey="USERID">
+            <Hierarchy hasAll="true" primaryKey="USERID" allMemberName="所有学历">
+                <Table name="PERSON" alias="g"/>
+                <Level name="学历" column="XUELI" uniqueMembers="true"/>
+            </Hierarchy>
+        </Dimension>
+        <Measure name="人数" column="USERID" aggregator="distinct count"/>
+    </Cube>
+</Schema>

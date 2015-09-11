@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kafka-web-console-master.iml" filepath="$PROJECT_DIR$/kafka-web-console-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/target/scala-2.10/src_managed/src_managed.iml" filepath="$PROJECT_DIR$/target/scala-2.10/src_managed/src_managed.iml" />
+    </modules>
+  </component>
+</project>
+

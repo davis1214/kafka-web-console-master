@@ -1,0 +1,42 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+
+        <!-- 数据库表brokerHistoryInfo对应的字段
+        o(name: String, host: String, port: String, var dataFlow: String = "", var dataFlowIn: String = "",
+        var dataFlowOut: String = "", var leaderElectionRate: String = "", var cpu: String = "",
+        var disIo: String = "", var memory: String = "", var gcTime: String = "",
+        var gcCount: String = "", time: Long, var isCurrentTime: Long = 0)
+         -->
+        <!--host、port、数据流量、流入速度、流出速度、leader 选举频率、cpu、disk io、memory，gc时间、gc次数-->
+        <th class="text-center">Zookeeper</th>
+        <th class="text-center">Host</th>
+        <th class="text-center">Port</th>
+        <th class="text-center">MessagesIn</th>
+        <th class="text-center">DataFlowIn</th>
+        <th class="text-center">DataFlowOut</th>
+        <th class="text-center">LeaderElectionRate</th>
+        <th class="text-center">LoadAverage</th>
+        <th class="text-center">HeapUageRate</th>
+        <th class="text-center">GCTime</th>
+        <th class="text-center">GCCunt</th>
+        <th class="text-center">Time</th>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="broker in brokers">
+            <td class="text-center">{{broker.name}}</td>
+            <td class="text-center">{{broker.host}}</td>
+            <td class="text-center">{{broker.port}}</td>
+            <td class="text-center">{{broker.messagesIn}}</td>
+            <td class="text-center">{{broker.dataFlowIn}}</td>
+            <td class="text-center">{{broker.dataFlowOut}}</td>
+            <td class="text-center">{{broker.leaderElectionRate}}</td>
+            <td class="text-center">{{broker.loadAverage}}</td>
+            <td class="text-center">{{broker.heapUageRate}}</td>
+            <td class="text-center">{{broker.gcTime}}</td>
+            <td class="text-center">{{broker.gcCount}}</td>
+            <td class="text-center">{{broker.time}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

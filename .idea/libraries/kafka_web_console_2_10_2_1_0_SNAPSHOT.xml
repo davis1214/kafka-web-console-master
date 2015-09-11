@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="kafka-web-console_2.10-2.1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/scala-2.10/kafka-web-console_2.10-2.1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

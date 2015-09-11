@@ -1,0 +1,49 @@
+{
+    "name": "configed monitor index in kafka cluster ",
+    "describe": "all topics & brokers configed to monitor",
+    "monitors": [
+        {
+            "monitor": "brokers",
+            "indexes": [
+                {
+                    "index": "MessagesIn",
+                    "value": "182173598102"
+                },
+                {
+                    "index": "LoadAverage",
+                    "value": "4.5"
+                }
+            ]
+        },
+        {
+            "monitor": "topics",
+            "indexes": [
+                {
+                    "topic": "tvadfront-pc",
+                    "index": "BytesInPerSec",
+                    "value": "2342342342"
+                },
+                {
+                    "topic": "tvadmpv",
+                    "index": "BytesInPerSec",
+                    "value": "2342342342"
+                }  ,
+                {
+                    "topic": "newtvadpv",
+                    "index": "MessagesInPerSec",
+                    "value": "2342342342"
+                }
+            ]
+        } ,
+        {
+            "monitor": "logLag",
+            "indexes": [
+                {
+                    "topic": "all-topic",
+                    "index": "logLag",
+                    "value": "10000000"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+<ul class="nav nav-tabs" ng-init="getSettings('all')">
+    <li class="active" data-ng-click="getSettings('all')">
+        <a data-toggle="tab" data-target="#all-settings">Settings</a>
+    </li>
+    <li data-ng-click="getAlarms('all')">
+        <a data-toggle="tab" data-target="#all-alarms">Alarms</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="all-settings">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <th>PurgeType</th>
+                <th>FetchInterval</th>
+                <th>PurgeSchedule</th>
+                </thead>
+                <tbody>
+                <!--<tr data-ng-class="{success: setting.isValid == '1', danger: setting.isValid == '0', danger: setting.isValid == '2'}"-->
+                <tr data-ng-repeat="setting in allSettings">
+                    <td>{{setting.purgeType}}</td>
+                    <td>{{setting.fetchInterval}}</td>
+                    <td>{{setting.purgeSchedule}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane" id="all-alarms">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <th>MonitorType</th>
+                <th>MonitorTopic</th>
+                <th>MonitorIndex</th>
+                <th>MonitorValue</th>
+                </thead>
+                <tbody>
+                <tr data-ng-repeat="alarm in allAlarms">
+                    <td>{{alarm.monitorType}}</td>
+                    <td>{{alarm.monitorTopic}}</td>
+                    <td>{{alarm.monitorIndex}}</td>
+                    <td>{{alarm.monitorValue}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

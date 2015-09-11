@@ -1,0 +1,44 @@
+kafka web console安装 .
+
+1、先下载安装scala的构建工具sbt，最新版本可以到官网查看,http://www.scala-sbt.org/0.13/tutorial/Installing-sbt-on-Linux.html。以下操作步骤：
+    wget https://dl.bintray.com/sbt/debian/sbt-0.13.6.deb
+    dpkg -i sbt-0.13.6.deb
+    sudo dpkg -i sbt-0.13.6.deb
+    git clone https://github.com/claudemamo/kafka-web-console
+    cd kafka-web-console/
+
+2、管理依赖包
+    如果sbt下载依赖包很慢的话，可以考虑用代理，在bash设置下环境变量
+     export SBT_OPTS="$SBT_OPTS -Dhttp.proxyHost=myproxy-Dhttp.proxyPort=myport"
+
+3、配置数据库
+    默认的数据库是H2，可以根据需要在conf下的application.conf下修改。
+
+4、打包
+   sbt dist //这个命令生成可以发布的包，在target/universal目录下。
+
+3、解压
+   unzip kafka-web-console-2.1.0-SNAPSHOT.zip
+   cd kafka-web-console-2.1.0-SNAPSHOT/bin
+
+4、启动
+  第一次启动时要加个参数：
+ ./kafka-web-console -DapplyEvolutions.default=true
+
+ 不然会报错：
+       [warn] play - Run with -DapplyEvolutions.default=true if you want to run them automatically (be careful) Oops, cannot start the server.
+       @6k1jkg3be: Database 'default' needs evolution!
+       at play.api.db.evolutions.EvolutionsPlugin$$anonfun$onStart$1$$anonfun$apply$1.apply$mcV$sp(Evolutions.scala:484)
+
+5、​查看帮助和后台运行：
+   ./kafka-web-console -h
+   nohup ./kafka-web-console >/dev/null 2>&1 &
+
+   后台执行时，确保配置了项目的部署目录：-Duser.dir=/opt/kafka-web-console
+
+6、修改http服务端口：
+    默认是9000端口。修改conf/application.conf 里的http.port，貌似不起作用。可以通过命令行传递参数进去：
+    ./kafka-web-console -Dhttp.port=9001
+
+7、参考：
+    sbt设置代理：http://stackoverflow.com/questions/13803459/how-to-use-sbt-from-behind-proxy

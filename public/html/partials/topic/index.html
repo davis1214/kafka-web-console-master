@@ -1,0 +1,62 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+
+        <!--
+           name,zookeeper,logSize, bytesInPerSec, bytesOutPerSec,failedFetchRequestsPerSec,failedProduceRequestsPerSec,
+           logBytesAppendedPerSec,messagesInPerSec
+        -->
+
+        <th class="text-center"></th>
+        <th class="text-center">Zookeeper</th>
+        <th class="text-center">Topic</th>
+        <th class="text-center">BytesInPerSec</th>
+        <th class="text-center">BytesOutPerSec</th>
+        <th class="text-center">MessagesInPerSec</th>
+        <th class="text-center">LogBytesAppendedPerSec</th>
+        <th class="text-center">FailedFetchRequestsPerSec</th>
+        <th class="text-center">FailedProduceRequestsPerSec</th>
+        <th class="text-center">Partition</th>
+        <th class="text-center">Log Size</th>
+        <th class="text-center">Log Lag</th>
+        <th class="text-center">Leader</th>
+        <th class="text-center">Time</th>
+        </thead>
+        <tbody data-ng-repeat="topic in topics">
+        <tr>
+            <td>
+                <i class="fa fa-minus-square fa-lg" data-ng-if="topic.expanded" data-ng-click="topic.expanded = false"/>
+                <i class="fa fa-plus-square fa-lg" data-ng-if="!topic.expanded" data-ng-click="topic.expanded = true"/>
+            </td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.zookeeper}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.name}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.bytesInPerSec}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.bytesOutPerSec}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.messagesInPerSec}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.logBytesAppendedPerSec}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.failedFetchRequestsPerSec}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.failedProduceRequestsPerSec}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">-</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.logSize}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.logLag}}</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">-</td>
+            <td class="clickable text-center" data-ng-click="getTopic(topic);">{{topic.time}}</td>
+        </tr>
+        <tr data-ng-if="topic.expanded" class="row-animation" data-ng-repeat="partition in topic.partitions track by $index">
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center"></td>
+            <td class="text-center">{{$index}}</td>
+            <td class="text-center">{{partition.logSize}}</td>
+            <td class="text-center">{{partition.logLag}}</td>
+            <td class="text-center">{{partition.leader}}</td>
+            <td class="text-center"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

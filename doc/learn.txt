@@ -1,0 +1,50 @@
+Actor Reference
+http://ju.outofmemory.cn/entry/69775
+
+
+一个Actor引用是ActorRef的子类型，主要目的是发送消息给它表示的Actor。Actor可以通过访问self字段来得到自身的引用；若要访问发送消息的Actor的引用，则访问sender字段。
+
+Actor Path
+
+可以认为Actor Path是通过字符串对Actor层级关系进行组合用以标识唯一Actor的一种方式。我们在创建Actor Path时，不用创建Actor；但如果没有创建对应的Actor，则不能创建Actor Reference。还可以创建一个Actor，再终止它，然后再以相同的Actor Path再创建一个新的Actor。新创建的Actor是Actor的新化身（Incarnation），但与旧的Actor并不是同一个。对于这个新化身而言，持有旧Actor的Actor Reference并不是有效的。消息发送给旧的Actor Reference，但不会被传递给新化身，即使它们具有相同的路径。
+
+Actor Path包含协议、位置和actor的层级。如下是一些Actor Path的实例：
+
+//purely local
+"akka://my-sys/user/service-a/worker1"                   
+
+// remote"akka.tcp://my-sys@host.example.com:5678/user/service-b" 
+
+//clustered (Future Extension)"cluster://my-cluster/service-c"
+有两种方式可以获得Actor Reference：创建Actor或查找。
+
+要创建Actor，可以调用ActorSystem.actorOf()，它创建的Actor在guardian actor之下；接着可以调用ActorContext.actorOf()在刚才创建的Actor内生成Actor树。这些方法会返
+回新创建的Actor的引用。每个Actor都可以直接访问Actor Context来或得它自身、Parent以及所有Children的引用。
+
+要查找Actor Reference，则可调用ActorSystem.actorSelection()方法。要获得限定到特定Actor的生命周期中的ActorRef，可以使用sender引用来发送一条消息如内建的Identity
+消息给Actor。
+
+在查找ActorRef时，可以使用绝对路径或相对路径。如果是相对路径，可以用两个点（..）表示parent actor。例如：
+
+context.actorSelection("../brother") ! msg
+使用绝对路径的例子：
+
+context.actorSelection("/user/ServiceA") ! msg
+还可以使用通配符查询逻辑的Actor层级，例如下面的例子就是发送消息给除当前Actor之外的所有同级Actor（因为..代表parent，所以这里就意味找当前Actor的parent的下级Actor）：
+
+context.actorSelection("../*") ! msg
+区别：actorOf vs. actorSelection vs. actorFor
+
+actorOf：创建一个新的Actor。创建的Actor为调用该方法时所属的Context下的直接子Actor；
+actorSelection：当消息传递来时，只查找现有的Actor，而不会创建新的Actor；在创建了selection时，也不会验证目标Actors是否存在；
+actorFor（已经被actorSelection所deprecated）：只会查找现有的Actor，而不会创建新的Actor。
+远程部署的相互影响
+
+当一个Actor创建一个Child时，Actor的系统部署器会决定这个新的Actor究竟属于同一个JVM，还是另一个节点。如果是后一种情况，Actor的创建就会通过在不同JVM的网络连接而触发，
+这属于不同的Actor系统。远程系统会将新的Actor放在一个特定的路径下，且新Actor的Supervisor应该是一个远程的Actor引用。而且，context.parent（Supervisor的引用）与
+context.path.parent（actor path的父节点）表示的不是同一个Actor。如下图所示：
+
+
+-----------------------------
+如果需要调整为mysql，直接在application.conf中修改db配置，启动后，直接点击mark*，就可以。
+可以参考：http://www.iteblog.com/archives/1084
